@@ -78,3 +78,27 @@ img {
 .logo img{
   width: 50px;
 }
+.footer__wrap{
+display: flex;
+justify-content: space-between;
+
+}
+.footer__logo{
+  height: 30%;
+  width: 160px;
+}
+.footer__menu{
+  height: 70%;
+}
+.social img{
+width: 40px;
+}
+.item{
+display: flex;
+
+}
+
+.footer__menu a{
+  color:rgb(185, 169, 169);
+  text-decoration: underline;
+}
