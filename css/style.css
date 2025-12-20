@@ -102,3 +102,47 @@ display: flex;
   color:rgb(185, 169, 169);
   text-decoration: underline;
 }
+.img-card{
+  width: 50%;
+}
+.img-card img{
+  height: 100%;
+}
+.cards_item{
+  display: flex;
+  border: 2px solid rgb(14, 126, 10);
+  background-color: rgb(199, 187, 18);  
+  height: 300px;
+  width: 700px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 10px;
+}
+.card-desc{
+  margin: 6px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+} 
+.top{
+  height: 20%;
+}
+.mid{
+  height: 60%;
+}
+.bottom{
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.click-img img {
+  width: 50px;
+  transition: transform 0.2s ease;
+  border-radius: 10px;
+}
+
+.click-img:active img {
+  transform: scale(0.8) rotate(-10deg);
+}
