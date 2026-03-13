@@ -247,7 +247,7 @@ display: flex;
   display: flex;
   justify-content: center;
 }
-button{
+.contact_button{
     background:rgb(18, 112, 5);
     color:white;
     border:none;
