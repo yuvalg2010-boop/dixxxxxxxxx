@@ -15,15 +15,13 @@ app.use(express.static(path.join(__dirname, '../fe')));
 
 app.post("/submit", (req, res) => {
     const { name, last_name, email, phone, message } = req.body;
-
-    console.log("----- נתונים מהטופס -----");
     console.log("שם:", name);
     console.log("שם משפחה:", last_name);
     console.log("אימייל:", email);
     console.log("טלפון:", phone);
     console.log("הודעה:", message);
 
-    res.json({ message: "הנתונים התקבלו בהצלחה!" });
+    res.json({ message: "הנתונים התקבלו בהצלחה" });
 });
 
 app.listen(port, () => {
