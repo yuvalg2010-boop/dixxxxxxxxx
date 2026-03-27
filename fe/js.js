@@ -9,7 +9,6 @@ form.addEventListener("submit", function (e) {
   const phone = document.querySelector("#phone").value;
   const message = document.querySelector("#message").value;
 
-  // Validation
   if (name.length < 3) {
     alert("שם חייב להכיל לפחות 3 תווים");
     return;
@@ -32,7 +31,6 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  // Send data to server
   fetch("http://localhost:3000/submit", {
     method: "POST",
     headers: {
