@@ -1,7 +1,6 @@
 const form = document.querySelector("#contactForm");
 
 form.addEventListener("submit", function (e) {
-
   e.preventDefault();
 
   const name = document.querySelector("#name").value;
@@ -10,20 +9,19 @@ form.addEventListener("submit", function (e) {
   const phone = document.querySelector("#phone").value;
   const message = document.querySelector("#message").value;
 
+  // Validation
   if (name.length < 3) {
     alert("שם חייב להכיל לפחות 3 תווים");
     return;
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   if (!emailPattern.test(email)) {
     alert("כתובת אימייל לא חוקית");
     return;
   }
 
   const phonePattern = /^[0-9]{10,}$/;
-
   if (!phonePattern.test(phone)) {
     alert("טלפון חייב להכיל לפחות 10 ספרות");
     return;
@@ -34,6 +32,27 @@ form.addEventListener("submit", function (e) {
     return;
   }
 
-  alert("הטופס נשלח בהצלחה!");
-
+  // Send data to server
+  fetch("http://localhost:3000/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name,
+      last_name,
+      email,
+      phone,
+      message
+    })
+  })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message);
+      form.reset();
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("שגיאה בשליחת הטופס");
+    });
 });
